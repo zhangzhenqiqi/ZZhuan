@@ -2,6 +2,7 @@ package com.example.zzq.zzhuan;
 
 public class Goods {
     private long gid;//商品标识
+    private long typeid;
     private String gname;//商品名称
     private long uid;//用户标识
     private String Time;//发布时间

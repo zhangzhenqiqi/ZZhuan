@@ -113,12 +113,12 @@ public class MainMenuActivity extends AppCompatActivity {
                 getSupportFragmentManager().beginTransaction().attach(profileFragment).commit();
             }
             else if(requestCode==2){
-                if(profileFragment==null) profileFragment = new ProfileFragment();
+                /*if(profileFragment==null) profileFragment = new ProfileFragment();
                 Bundle bundle = new Bundle();
                 bundle.putInt("USER_MODEL",USER_MODEL);
                 profileFragment.setArguments(bundle);
                 getSupportFragmentManager().beginTransaction().detach(profileFragment).commit();
-                getSupportFragmentManager().beginTransaction().attach(profileFragment).commit();
+                getSupportFragmentManager().beginTransaction().attach(profileFragment).commit();*/
             }
         }
     }
