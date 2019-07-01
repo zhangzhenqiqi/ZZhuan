@@ -11,6 +11,5 @@ public class MyProfileAlterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_profile_alter);
-        Intent intent=getIntent();
     }
 }
