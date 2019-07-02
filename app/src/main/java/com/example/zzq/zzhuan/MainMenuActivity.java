@@ -43,6 +43,8 @@ public class MainMenuActivity extends AppCompatActivity {
     private Fragment[] fragments;
     private BottomNavigationView navigationView;
     private int lastfragment;//用于记录上次选择的Fragment
+    private DatabaseManager databaseManager;
+
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -120,10 +122,33 @@ public class MainMenuActivity extends AppCompatActivity {
                 getSupportFragmentManager().beginTransaction().detach(profileFragment).commit();
                 getSupportFragmentManager().beginTransaction().attach(profileFragment).commit();*/
             }
+            else if(requestCode==3){
+                //Toast.makeText(MainMenuActivity.this,"requestcode-3",Toast.LENGTH_SHORT).show();
+                databaseManager = new DatabaseManager(MainMenuActivity.this);
+                user=databaseManager.findById(user.getUid());
+                Bundle bundle = new Bundle();
+                bundle.putInt("USER_MODEL",USER_MODEL);
+                bundle.putSerializable("USER_DATA",user);
+                profileFragment.setArguments(bundle);
+                getSupportFragmentManager().beginTransaction().detach(profileFragment).commit();
+                getSupportFragmentManager().beginTransaction().attach(profileFragment).commit();
+            }
         }
     }
 
     public void init(){
+        databaseManager=new DatabaseManager(MainMenuActivity.this);
+        if(databaseManager.isHave(2019)==false){
+            user=new User();
+            user.setSex(1);
+            user.setIsadmin(1);
+            user.setUid(2019);
+            user.setPassword("2019");
+            user.setNickname("admin");
+            user.setTel("18211607393");
+            user.setAddress("111");
+            databaseManager.addUser(user);
+        }
         initBottom();
         initfragment();
     }

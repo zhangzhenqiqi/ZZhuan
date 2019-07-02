@@ -24,8 +24,12 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".MyProfileAlterActivity"
+            android:theme="@style/AppTheme2" />
+        <activity
             android:name=".MainMenuActivity"
             android:label="@string/title_activity_main_menu"
+            android:launchMode="singleTop"
             android:theme="@style/AppTheme2" />
         <activity
             android:name=".LoginActivity"
@@ -33,7 +37,15 @@
         <activity
             android:name=".RegisActivity"
             android:parentActivityName=".MainMenuActivity" />
-        <activity android:name=".MyProfileAlterActivity"></activity>
+        <activity
+            android:name=".admin.ResetPasswdActivity"
+            android:parentActivityName=".MainMenuActivity" />
+        <activity
+            android:name=".admin.DelUserActivity"
+            android:parentActivityName=".MainMenuActivity" />
+        <activity android:name=".admin.ModifyUserDataActivity"
+            android:parentActivityName=".MainMenuActivity"
+            ></activity>
     </application>
 
 </manifest>

@@ -1,8 +1,6 @@
 package com.example.zzq.zzhuan.fragment;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -13,15 +11,21 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.zzq.zzhuan.LoginActivity;
-import com.example.zzq.zzhuan.MainMenuActivity;
 import com.example.zzq.zzhuan.MyProfileAlterActivity;
 import com.example.zzq.zzhuan.R;
 import com.example.zzq.zzhuan.RegisActivity;
+import com.example.zzq.zzhuan.admin.DelUserActivity;
+import com.example.zzq.zzhuan.admin.ModifyUserDataActivity;
+import com.example.zzq.zzhuan.admin.ResetPasswdActivity;
 import com.example.zzq.zzhuan.User;
-
+/*
+* requestcode:
+* 1：登录
+* 2：注册
+* 3：修改个人信息
+* */
 public class ProfileFragment extends Fragment {
 
     private final String Tag = "ProfileFragment";
@@ -48,7 +52,9 @@ public class ProfileFragment extends Fragment {
             view = inflater.inflate(R.layout.fragment_profile_1,container,false);
             init_1(view);
         }else if(USER_MODEL ==2){
+            user =(User) bundle.getSerializable("USER_DATA");
             view = inflater.inflate(R.layout.fragment_profile_2,container,false);
+            init_2(view);
         }
 
         return view;
@@ -88,9 +94,50 @@ public class ProfileFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(),MyProfileAlterActivity.class);
                 intent.putExtra("USER_DATA",user);
+                getActivity().startActivityForResult(intent,3);
+            }
+        });
+    }
+
+    public void init_2(View view){
+        TextView tv_nickname,tv_id,tv_model;
+        tv_id=view.findViewById(R.id.tv_id);
+        tv_id.setText(String.valueOf(user.getUid()));
+        tv_model=view.findViewById(R.id.tv_model);
+        if(user.getIsadmin()==0){
+            tv_model.setText("普通用户");
+        }else{
+            tv_model.setText("管理员");
+        }
+        tv_nickname=view.findViewById(R.id.tv_nickname);
+        tv_nickname.setText(user.getNickname());
+
+        Button bt_rpwd,bt_deluser,bt_mdata;
+        bt_rpwd=view.findViewById(R.id.bt_mpwd);
+        bt_rpwd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getActivity(),ResetPasswdActivity.class);
                 getActivity().startActivity(intent);
             }
         });
+        bt_deluser=view.findViewById(R.id.bt_deluser);
+        bt_deluser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getActivity(),DelUserActivity.class);
+                getActivity().startActivity(intent);
+            }
+        });
+        bt_mdata=view.findViewById(R.id.bt_mdata);
+        bt_mdata.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getActivity(),ModifyUserDataActivity.class);
+                getActivity().startActivity(intent);
+            }
+        });
+
     }
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {

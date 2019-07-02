@@ -1,11 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="ADMIN MODEL!"
-    android:textSize="100dp"
-    />
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        >
+        <LinearLayout
+            android:id="@+id/ll_myprofile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@mipmap/user"
+                />
+            <LinearLayout
+                android:layout_width="250dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:id="@+id/tv_nickname"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:text="zzq"
+                    android:textSize="20sp"
+                    android:layout_weight="1"
+                    android:textColor="#000000"
+                    />
+                <TextView
+                    android:id="@+id/tv_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:textSize="20sp"
+                    android:layout_weight="1"
+                    android:text="201608020125"
+                    />
+                <TextView
+                    android:id="@+id/tv_model"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:textSize="20sp"
+                    android:layout_weight="1"
+                    android:text="Admin"
+                    />
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text=">"
+                android:textSize="35sp"
+                />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/bt_mpwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#902f7c87"
+            android:text="重置密码"
+            android:layout_marginTop="10dp"
+            />
+        <Button
+            android:id="@+id/bt_mdata"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#902f7c87"
+            android:text="修改用户"
+            android:layout_marginTop="10dp"
+            />
+        <Button
+            android:id="@+id/bt_deluser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#902f7c87"
+        android:text="删除用户"
+        android:layout_marginTop="10dp"
+        />
+        <Button
+            android:id="@+id/bt_datamanage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#902f7c87"
+            android:text="信息管理"
+            android:layout_marginTop="10dp"
+            />
+    </LinearLayout>
+</ScrollView>
