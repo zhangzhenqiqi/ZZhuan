@@ -1,7 +1,5 @@
 package com.example.zzq.zzhuan;
 
-import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +8,9 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
+
+import com.example.zzq.zzhuan.db.DatabaseManager;
+import com.example.zzq.zzhuan.entity.User;
 
 import static java.lang.Character.isDigit;
 import static java.lang.Character.isLetter;

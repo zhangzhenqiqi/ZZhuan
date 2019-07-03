@@ -1,9 +1,6 @@
 package com.example.zzq.zzhuan;
 
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +8,9 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.zzq.zzhuan.db.DatabaseManager;
+import com.example.zzq.zzhuan.entity.User;
 
 public class LoginActivity extends AppCompatActivity {
     private Button bt_login;

@@ -19,7 +19,7 @@ import com.example.zzq.zzhuan.RegisActivity;
 import com.example.zzq.zzhuan.admin.DelUserActivity;
 import com.example.zzq.zzhuan.admin.ModifyUserDataActivity;
 import com.example.zzq.zzhuan.admin.ResetPasswdActivity;
-import com.example.zzq.zzhuan.User;
+import com.example.zzq.zzhuan.entity.User;
 /*
 * requestcode:
 * 1：登录

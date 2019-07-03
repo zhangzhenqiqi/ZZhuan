@@ -8,10 +8,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.zzq.zzhuan.DatabaseManager;
+import com.example.zzq.zzhuan.db.DatabaseManager;
 import com.example.zzq.zzhuan.MyProfileAlterActivity;
 import com.example.zzq.zzhuan.R;
-import com.example.zzq.zzhuan.User;
+import com.example.zzq.zzhuan.entity.User;
 
 public class ModifyUserDataActivity extends AppCompatActivity {
 

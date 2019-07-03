@@ -1,7 +1,5 @@
 package com.example.zzq.zzhuan;
 
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -18,8 +16,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.example.zzq.zzhuan.db.DatabaseManager;
+import com.example.zzq.zzhuan.entity.Goods;
+import com.example.zzq.zzhuan.entity.User;
 import com.example.zzq.zzhuan.fragment.ClassifyFragment;
 import com.example.zzq.zzhuan.fragment.HomeFragment;
 import com.example.zzq.zzhuan.fragment.ProfileFragment;
@@ -149,6 +149,8 @@ public class MainMenuActivity extends AppCompatActivity {
             user.setAddress("111");
             databaseManager.addUser(user);
         }
+
+
         initBottom();
         initfragment();
     }

@@ -1,7 +1,6 @@
 package com.example.zzq.zzhuan;
 
 import android.content.Intent;
-import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Window;
@@ -10,7 +9,9 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import com.example.zzq.zzhuan.NavigationBarActivity;
+import com.example.zzq.zzhuan.db.DatabaseManager;
+import com.example.zzq.zzhuan.entity.User;
+
 public class MyProfileAlterActivity extends AppCompatActivity {
 
     private NavigationBarActivity navigationBarActivity;

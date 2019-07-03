@@ -1,17 +1,15 @@
 package com.example.zzq.zzhuan.admin;
 
-import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.zzq.zzhuan.DatabaseManager;
+import com.example.zzq.zzhuan.db.DatabaseManager;
 import com.example.zzq.zzhuan.R;
-import com.example.zzq.zzhuan.User;
+import com.example.zzq.zzhuan.entity.User;
 
 public class ResetPasswdActivity extends AppCompatActivity{
 

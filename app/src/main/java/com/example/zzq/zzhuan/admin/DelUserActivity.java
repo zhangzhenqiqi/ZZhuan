@@ -7,9 +7,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.zzq.zzhuan.DatabaseManager;
+import com.example.zzq.zzhuan.db.DatabaseManager;
 import com.example.zzq.zzhuan.R;
-import com.example.zzq.zzhuan.User;
 
 public class DelUserActivity extends AppCompatActivity {
     private EditText et_uid;
